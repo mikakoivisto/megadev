@@ -1,0 +1,38 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: support desk
+status: open
+reviewed: 2026-10-28
+signature: 'v1.eyJzdWIiOiI1NDk5IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyMTk1MjAsImV4cCI6MTc5MzMwNTkyMH0.NgGqIqAV5H1gyjJg-LDHV5kKQOBFdsquUo3xH3o74Hc'
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+</script>
+
+Ticket #4471 holds 412 unique reports. They come from three causes. Only the first is the month-and-day flip the ticket was merged for.
+
+<Callout>
+Split into three tickets, one per problem. Counts are unique report IDs, with duplicate export rows removed.
+</Callout>
+
+## The three problems
+
+- **Month and day swapped (parser): 374 reports.** The shared parser reads dates month first. Eleven day-first tenants get flipped dates, from April to October.
+- **Booking form hint (hint): 33 reports.** Three tenants run the `booking-v3` form, whose date hint reads MM/DD. Their people type what the hint asks, and the form reads it the tenant's way. This is a different bug from the parser.
+- **One-day move: 5 reports.** Dates show one day off, for example Tuesday shown as Monday. The desk notes read these as a one-day move, not a month flip. The cause is not verified.
+
+## What the desk table shows
+
+<CauseTable ticket={4471} />
+
+## Intake tags
+
+Intake tags come from the reporter's browser. They disagree with the cause on 38 reports. The cause depends on the tenant's form and locale, so this page uses the cause, not the tag.
+
+Per-report causes are in `analysis/4471-causes.tsv` in the repo that holds this page.
+
+<RenderStamp {signature} />
