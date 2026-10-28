@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><title>#4471 · three problems, not one</title></head>
 <body>
 <h1>#4471 · two problems, not one</h1>
-<p><small>owner: support desk · status: open · reviewed: 2026-10-28</small></p>
+<p><small>owner: support desk · status: known · reviewed: 2026-10-28</small></p>
 <p>Ticket #4471 holds 412 unique reports. They come from two causes, not one. The first is the month-and-day flip the ticket was merged for.</p>
 <blockquote>Split into two tickets, one per cause. Counts are unique report IDs, with duplicate export rows removed.</blockquote>
 <h2>The two problems</h2>
@@ -10,6 +10,8 @@
 <li><b>Month and day swapped (parser): 379 reports.</b> The shared parser reads dates month first. Eleven day-first tenants get flipped dates, from April to October. The desk reads 5 of these as a one-day move, not a month flip. They stay in this cause and are footnoted here, not split out.</li>
 <li><b>Booking form hint (hint): 33 reports.</b> Three tenants run the <code>booking-v3</code> form, whose date hint reads MM/DD. Their people type what the hint asks, and the form reads it the tenant's way. This is a different bug from the parser.</li>
 </ul>
+<h2>Engineering update</h2>
+<p>#4471 closed on 5 October. <b>Parser: fixed</b> by <code>fix(dates): parse dd/mm for eu locales</code>. <b>Hint: won't fix</b>, because the booking-v3 form is retired.</p>
 <h2>What the desk table shows</h2>
 <p><b>412</b> reports merged into #4471 · <b>2</b> causes</p>
 <table border="1" cellpadding="4">

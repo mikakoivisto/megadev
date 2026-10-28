@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · two problems, not one'
 owner: support desk
-status: open
+status: known
 reviewed: 2026-10-28
 signature: 'v1.eyJzdWIiOiI1NDk5IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyMTk1MjAsImV4cCI6MTc5MzMwNTkyMH0.NgGqIqAV5H1gyjJg-LDHV5kKQOBFdsquUo3xH3o74Hc'
 ---
@@ -23,6 +23,10 @@ Split into two tickets, one per cause. Counts are unique report IDs, with duplic
 
 - **Month and day swapped (parser): 379 reports.** The shared parser reads dates month first. Eleven day-first tenants get flipped dates, from April to October. The desk reads 5 of these as a one-day move, not a month flip. They stay in this cause and are footnoted here, not split out.
 - **Booking form hint (hint): 33 reports.** Three tenants run the `booking-v3` form, whose date hint reads MM/DD. Their people type what the hint asks, and the form reads it the tenant's way. This is a different bug from the parser.
+
+## Engineering update
+
+#4471 closed on 5 October. **Parser: fixed** by `fix(dates): parse dd/mm for eu locales`. **Hint: won't fix**, because the booking-v3 form is retired.
 
 ## What the desk table shows
 
