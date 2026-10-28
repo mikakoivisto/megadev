@@ -4,3 +4,5 @@
 - `rendered/4471-split.html`: the page as the desk sees it.
 - `analysis/4471-causes.tsv`: one row per unique report in #4471, with its cause.
 - Issues: one per cause in #4471, each with its report count.
+
+Tickets #1 and #2 are resolved by the kb page above.
