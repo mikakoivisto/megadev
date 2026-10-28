@@ -1,0 +1,33 @@
+---
+layout: runbook
+title: '0002 · Duplicates share a cause'
+owner: support desk
+status: accepted
+reviewed: 2026-10-28
+signature: 'v1.eyJzdWIiOiI1NDk5IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyMTk1MjAsImV4cCI6MTc5MzMwNTkyMH0.NgGqIqAV5H1gyjJg-LDHV5kKQOBFdsquUo3xH3o74Hc'
+---
+
+<script>
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+**Date:** 28 October 2026 · **Deciders:** support desk · **Replaces:** [0001](/kb/decisions/0001-dedupe-by-subject)
+
+## Context
+
+Decision 0001 merged reports on subject alone. #4471 shows the cost: 412 reports with similar
+subjects were merged into one ticket, but they come from two causes. Reports with the same
+subject need not share a bug (see [#4471 split](/kb/incidents/4471-split)).
+
+## Decision
+
+Two reports are the same issue when they share a cause: the tenant's locale and booking form,
+and the way the report came in (`causeOf` in `causes.ts`). The desk merges on cause, not on subject.
+
+## Consequences
+
+- Each ticket carries one cause and a count of the reports it covers.
+- Reports read differently from their cause stay under the cause and get a footnote.
+- Merging takes one lookup of the tenant, not a read of the body.
+
+<RenderStamp {signature} />
