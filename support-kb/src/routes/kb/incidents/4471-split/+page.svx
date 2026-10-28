@@ -21,7 +21,7 @@ Split into three tickets, one per problem. Counts are unique report IDs, with du
 
 ## The three problems
 
-- **Month and day swapped (parser): 374 reports.** The shared parser reads dates month first. Eleven day-first tenants get flipped dates, from April to October.
+- **Month and day swapped (parser): 379 reports.** The shared parser reads dates month first. Eleven day-first tenants get flipped dates, from April to October. The desk files the 5 one-day reports under this cause, so they are counted here too and are also listed in the third problem.
 - **Booking form hint (hint): 33 reports.** Three tenants run the `booking-v3` form, whose date hint reads MM/DD. Their people type what the hint asks, and the form reads it the tenant's way. This is a different bug from the parser.
 - **One-day move: 5 reports.** Dates show one day off, for example Tuesday shown as Monday. The desk notes read these as a one-day move, not a month flip. The cause is not verified.
 
