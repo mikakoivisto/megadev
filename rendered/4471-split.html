@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>#4471 · three problems, not one</title></head>
+<body>
+<h1>#4471 · two problems, not one</h1>
+<p><small>owner: support desk · status: open · reviewed: 2026-10-28</small></p>
+<p>Ticket #4471 holds 412 unique reports. They come from two causes, not one. The first is the month-and-day flip the ticket was merged for.</p>
+<blockquote>Split into two tickets, one per cause. Counts are unique report IDs, with duplicate export rows removed.</blockquote>
+<h2>The two problems</h2>
+<ul>
+<li><b>Month and day swapped (parser): 379 reports.</b> The shared parser reads dates month first. Eleven day-first tenants get flipped dates, from April to October. The desk reads 5 of these as a one-day move, not a month flip. They stay in this cause and are footnoted here, not split out.</li>
+<li><b>Booking form hint (hint): 33 reports.</b> Three tenants run the <code>booking-v3</code> form, whose date hint reads MM/DD. Their people type what the hint asks, and the form reads it the tenant's way. This is a different bug from the parser.</li>
+</ul>
+<h2>What the desk table shows</h2>
+<p><b>412</b> reports merged into #4471 · <b>2</b> causes</p>
+<table border="1" cellpadding="4">
+<thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead>
+<tbody>
+<tr><td><code>parser</code></td><td>379</td><td>parser ×356 · hint ×23</td><td>11</td><td>2026-04-01 → 2026-10-04</td><td>#4471</td></tr>
+<tr><td><code>hint</code></td><td>33</td><td>hint ×18 · parser ×15</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td>not this ticket — no ticket of its own</td></tr>
+</tbody></table>
+<p><small>5 reports read as a one-day move; filed under <code>parser</code> by tenant.</small></p>
+<h2>Intake tags</h2>
+<p>Intake tags come from the reporter's browser. They disagree with the cause on 38 reports. The cause depends on the tenant's form and locale, so this page uses the cause, not the tag.</p>
+<p>Per-report causes are in <code>analysis/4471-causes.tsv</code> in the repo that holds this page.</p>
+<p><small>desk ref <b>DR-88KM-BR74</b></small></p>
+</body></html>
